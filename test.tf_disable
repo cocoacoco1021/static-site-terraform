@@ -1,0 +1,12 @@
+resource "aws_kms_key" "this_is_test" {
+  description             = "${var.project}-${var.environment}-this-is-test-kms"
+  deletion_window_in_days = 7
+  enable_key_rotation     = true
+  is_enabled              = true
+}
+
+// KMS Alias
+resource "aws_kms_alias" "this_is_test" {
+  name          = "alias/${var.project}/${var.environment}/this_is_test_kms_key"
+  target_key_id = aws_kms_key.this_is_test.id
+}

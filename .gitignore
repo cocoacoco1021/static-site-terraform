@@ -1,0 +1,23 @@
+#  Local .terraform directories
+.terraform/*
+**/.terraform/*
+.terraform.lock.hcl
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# editor files
+*.vscode
+
+# direnv file
+*.direnv
+*.envrc
+
+# key file
+*.key
+*.pub
+
+# templates
+terraform.tfvars
+backend.tf
